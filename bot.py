@@ -27,7 +27,7 @@ safety_settings = [
 ]
 
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
+    model_name="gemini-1.5-flash-8b", #gemini-1.5-pro, gemini-1.5-flash, gemini-1.5-flash-8b, gemini-1.0-pro, learnlm-1.5-pro-experimental
     generation_config=generation_config,
     safety_settings=safety_settings)
 
@@ -134,7 +134,7 @@ def handle_voice_message(message):
             bot.reply_to(message, response)
 
         except sr.UnknownValueError:
-            bot.reply_to(message, "Lo siento, no pude entenderte.")
+            bot.reply_to(message, "Lo siento, no pude entenderte")
         except sr.RequestError:
             bot.reply_to(message, "Mejor escribe porque no te puedo escuchar")
 
